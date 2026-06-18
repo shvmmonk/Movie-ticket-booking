@@ -54,4 +54,11 @@ public void generateSeat(){
     } // valof se we converted the char into the string
 }
 
+public void showSeats(){
+    for(Seat seat : seats){
+        String status = seat.isBooked() ? "[X]" : "[O]";
+        System.out.println(status + " ");
+    }
+}
+
 }
