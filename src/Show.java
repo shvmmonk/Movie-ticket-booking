@@ -57,7 +57,7 @@ public void generateSeat(){
 public void showSeats(){
     String currentRow = "";
     for(Seat seat : seats){
-        if (!seat.getRow().equals(currentRow)) {
+        if (!seat.getRow().equals(currentRow)) { // in java we use .eqauls insted of == while dealing with strings
             System.out.println();
             currentRow = seat.getRow();
             System.out.print(seat.getRow() + ": ");
@@ -65,6 +65,35 @@ public void showSeats(){
         String status = seat.isBooked() ? "[X]" : "[O]";
         System.out.print(status + " ");
     }
+    }
+
+    public void bookSeat(String row , int number){
+        for(Seat seat: seats){
+           if(seat.getRow().equals(row) && seat.getNumber() == number){
+            if (seat.isBooked()) {
+               
+                System.out.println("Sorry this seat is already booked");
+
+                return;
+            }else{
+                seat.setBooked(true);
+                System.out.println("Thanks for Booking");
+                System.out.println("Your seat is booked");
+                return;
+            }
+
+
+           }
+           
+            
+        }
+
+                    System.out.println("Seat is not found : Sorry for the inconvinience");
+
+
+        
+
+
 }
 
 }
