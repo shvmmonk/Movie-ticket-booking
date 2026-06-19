@@ -55,9 +55,15 @@ public void generateSeat(){
 }
 
 public void showSeats(){
+    String currentRow = "";
     for(Seat seat : seats){
+        if (!seat.getRow().equals(currentRow)) {
+            System.out.println();
+            currentRow = seat.getRow();
+            System.out.print(seat.getRow() + ": ");
+        }
         String status = seat.isBooked() ? "[X]" : "[O]";
-        System.out.println(status + " ");
+        System.out.print(status + " ");
     }
 }
 
