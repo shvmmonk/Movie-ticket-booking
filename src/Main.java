@@ -26,7 +26,8 @@ public class Main {
 
         System.out.println("1. Show seats");
         System.out.println("2. Book a seat");
-        System.out.println("3. Exit");
+        System.out.println("3. Cancel your seat");
+        System.out.println("4. Exit");
 
             int input = scanner.nextInt();
 
@@ -47,6 +48,16 @@ public class Main {
                     break;
 
                 case 3:
+                     System.out.println("Sorry for the inconvenience");
+                     System.out.println("What is the seat row you would like to cancel");
+                     String seatRow = scanner.next();
+                     System.out.println("What is the seat number you would like to cancel");
+                     int seatNumber = scanner.nextInt();
+
+                     show.cancelSeat(seatRow, seatNumber);
+                     break;
+
+                case 4:
                     System.out.println("Good Bye and Have a nice day !!");
                     return;
 
