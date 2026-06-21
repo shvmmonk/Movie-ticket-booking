@@ -54,6 +54,28 @@ public void generateSeat(){
     } // valof se we converted the char into the string
 }
 
+public void cancelSeat(String row , int number){
+     for (Seat seat : seats) {
+        if(seat.getRow().equals(row) && seat.getNumber() == number){
+            if(seat.isBooked() == false){
+                System.out.println("This seat is not booked till yet");
+                return;
+            }
+
+            if(seat.isBooked() == true){
+                seat.setBooked(false);;
+                System.out.println("Your seat is cancelled Successfully . Any debited amount will be credited into your respective account within 3-4 working days");
+                return;
+            }
+
+
+        }
+
+     }
+       
+        System.out.println("Seat Not Found");
+}
+
 public void showSeats(){
     String currentRow = "";
     for(Seat seat : seats){
