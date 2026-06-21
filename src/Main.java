@@ -1,15 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-         Show show = new Show("Avengers", "10:00 PM");
-        // show.bookSeat("A",1 );
-        // show.bookSeat("A",1 );
-        // show.bookSeat("Z",99 );
-        // show.showSeats();
+        List<Show> shows = new ArrayList<>();
+        shows.add(new Show("Avengers", "10:00"));
+        shows.add(new Show("Intersteller", "14:00"));
+        shows.add(new Show("Conjuring", "20:00"));
+
+        for (Show show2 : shows) {
+            System.out.println(show2.getName() + " - " + show2.getTime());
+        }
+
+      
 
         Scanner scanner = new Scanner(System.in);
-        
+        System.out.println("choose a Movie(1-3)");
+        int movieChoice = scanner.nextInt();
+        Show show = shows.get(movieChoice - 1);
 
        
 
