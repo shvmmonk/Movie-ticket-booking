@@ -44,6 +44,7 @@ public class Main {
                     int number = scanner.nextInt();
                     
                     show.bookSeat(row, number);
+                    show.saveSeat();
                     System.out.println("Have a nice show , your seat number is " + row + "-" +number);
                     break;
 
@@ -55,6 +56,7 @@ public class Main {
                      int seatNumber = scanner.nextInt();
 
                      show.cancelSeat(seatRow, seatNumber);
+                     show.saveSeat();
                      break;
 
                 case 4:

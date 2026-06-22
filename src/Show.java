@@ -118,4 +118,18 @@ public void showSeats(){
 
 }
 
+public void saveSeat(){
+    try{
+        java.io.FileWriter writer = new java.io.FileWriter("seats.txt");
+        for(Seat seat : seats){
+            writer.write(seat.getRow() + "," + seat.getNumber() + "," + seat.getType() + "," + seat.isBooked() +"\n");
+
+        }
+        writer.close();
+    }catch(Exception e){
+        System.out.println("Save error:" + e.getMessage());
+    }
+}
+
+
 }
