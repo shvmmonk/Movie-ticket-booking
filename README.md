@@ -85,4 +85,8 @@ src/
 - File persistence — currently all bookings reset when the program restarts
 - Booking history — track which customer booked which seats and when
 - Pricing logic based on seat type
+<<<<<<< HEAD
 - Input validation for malformed input (e.g. text instead of numbers)
+=======
+- Input validation for malformed input (e.g. text instead of numbers)
+>>>>>>> 193de314763d09890503449320a8c5b47895ff9f
