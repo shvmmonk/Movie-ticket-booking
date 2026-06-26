@@ -29,7 +29,8 @@ public class Main {
         System.out.println("3. Cancel your seat");
         System.out.println("4. Exit");
 
-            int input = scanner.nextInt();
+            int input = scanner.nextInt();  
+            show.loadSeats();
 
             switch (input) {
                 case 1:

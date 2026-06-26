@@ -131,5 +131,19 @@ public void saveSeat(){
     }
 }
 
+//Java mein file padhne ke liye BufferedReader use hota hai — ye line-by-line text padhne ka tool hai.
+public void loadSeats(){
+    try{
+        java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.FileReader("seats.txt"));
+        String line;
+        while ((line = reader.readLine() ) != null) {
+            String[] parts = line.split(",");
+            System.out.println(parts[0]);
+        }
+        reader.close();
+    }catch(Exception e){
+        System.out.println("No saved seats found");
+    }
+}
 
 }
