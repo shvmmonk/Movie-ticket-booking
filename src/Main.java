@@ -18,7 +18,12 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         System.out.println("choose a Movie(1-3)");
         int movieChoice = scanner.nextInt();
+        if (movieChoice < 1 || movieChoice > shows.size()) {
+            System.out.println("Invalid Choice : Try again");
+            return;
+        }
         Show show = shows.get(movieChoice - 1);
+        show.loadSeats();
 
        
 
@@ -30,7 +35,7 @@ public class Main {
         System.out.println("4. Exit");
 
             int input = scanner.nextInt();  
-            show.loadSeats();
+
 
             switch (input) {
                 case 1:
