@@ -45,7 +45,7 @@ public class Main {
             
                 case 2:
                     System.out.print("What is the seat row that you would like to book: ");
-                    String row = scanner.next();
+                    String row = scanner.next().toUpperCase();
                     System.out.print("what is the seat number that you would like to book: ");
                     int number = scanner.nextInt();
                     
@@ -57,7 +57,7 @@ public class Main {
                 case 3:
                      System.out.println("Sorry for the inconvenience");
                      System.out.println("What is the seat row you would like to cancel");
-                     String seatRow = scanner.next();
+                     String seatRow = scanner.next().toUpperCase();
                      System.out.println("What is the seat number you would like to cancel");
                      int seatNumber = scanner.nextInt();
 
