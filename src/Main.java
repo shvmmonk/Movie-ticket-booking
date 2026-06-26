@@ -32,7 +32,9 @@ public class Main {
         System.out.println("1. Show seats");
         System.out.println("2. Book a seat");
         System.out.println("3. Cancel your seat");
-        System.out.println("4. Exit");
+        System.out.println("4. View Booking History");
+        System.out.println("5. Exit");
+        
 
             int input = scanner.nextInt();  
 
@@ -48,8 +50,10 @@ public class Main {
                     String row = scanner.next().toUpperCase();
                     System.out.print("what is the seat number that you would like to book: ");
                     int number = scanner.nextInt();
+                    System.out.println("Enter your name: ");
+                    String name = scanner.next();
                     
-                    show.bookSeat(row, number);
+                    show.bookSeat(row , number , name);
                     show.saveSeat();
                     System.out.println("Have a nice show , your seat number is " + row + "-" +number);
                     break;
@@ -66,6 +70,11 @@ public class Main {
                      break;
 
                 case 4:
+                    System.out.println("These are the list of seats that are available: ");
+                   //show.showBookingHistory();
+                    break;
+
+                case 5:
                     System.out.println("Good Bye and Have a nice day !!");
                     return;
 
