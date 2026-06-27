@@ -36,12 +36,12 @@ A console-based movie ticket booking system built in Java. Browse available movi
 ## Usage
 
 On launch, you'll see a list of available movies:
-```
+
 Avengers - 10:00
 Intersteller - 14:00
 Conjuring - 20:00
 choose a Movie(1-3)
-```
+
 
 After picking a movie, you'll get the main menu:
 
@@ -56,7 +56,7 @@ When booking or cancelling, you'll be asked for a **row** (A–E) and a **seat n
 
 ### Example session
 
-```
+
 choose a Movie(1-3)
 1
 1. Show seats
@@ -68,11 +68,10 @@ What is the seat row that you would like to book: A
 what is the seat number that you would like to book: 1
 Thanks for Booking
 Have a nice show, your seat number is A-1
-```
+
 
 ## Project Structure
 
-```
 src/
 ├── Main.java       # Entry point — movie selection and console menu
 ├── Show.java       # Represents a movie show: seat generation, booking, cancellation, seat map display

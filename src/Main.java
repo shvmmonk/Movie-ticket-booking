@@ -71,7 +71,7 @@ public class Main {
 
                 case 4:
                     System.out.println("These are the list of seats that are available: ");
-                   //show.showBookingHistory();
+                    show.showBookingHistory();
                     break;
 
                 case 5:

@@ -148,6 +148,14 @@ public class Show {
     }
 
     public void showBookingHistory() {
+        if(bookingHistory.isEmpty()){
+            System.out.println("No bookings yet");
+            return;
+        }
+
+        for (Booking booking : bookingHistory) {
+            System.out.println(booking.getCustomerName() + " booked the seat " + booking.getSeatId() + " for " + booking.getMovieName() + " on " + booking.getBookedAt());
+        }
 
     }
 
