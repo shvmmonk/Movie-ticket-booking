@@ -104,8 +104,10 @@ public class Show {
                     seat.setBooked(true);
                     Booking book = new Booking(customerName, name, seat.getSeatId());
                     bookingHistory.add(book);
+
                     System.out.println("Thanks for Booking");
                     System.out.println("Your seat is booked");
+                    System.out.println("Total amount: Rs" + seat.getType().getPrice());
                     return;
                 }
 

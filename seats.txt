@@ -1,4 +1,4 @@
-A,1,PREMIUM,false
+A,1,PREMIUM,true
 A,2,PREMIUM,false
 A,3,PREMIUM,false
 A,4,PREMIUM,false
@@ -10,7 +10,7 @@ A,9,PREMIUM,false
 A,10,PREMIUM,false
 B,1,REGULAR,false
 B,2,REGULAR,false
-B,3,REGULAR,true
+B,3,REGULAR,false
 B,4,REGULAR,false
 B,5,REGULAR,false
 B,6,REGULAR,false
