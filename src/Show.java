@@ -107,7 +107,7 @@ public class Show {
 
                     System.out.println("Thanks for Booking");
                     System.out.println("Your seat is booked");
-                    System.out.println("Total amount: Rs" + seat.getType().getPrice());
+                    System.out.println("Total amount: Rs " + seat.getType().getPrice());
                     return;
                 }
 

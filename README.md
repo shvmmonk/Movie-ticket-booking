@@ -1,6 +1,6 @@
 # Movie Ticket Booking System
 
-A console-based movie ticket booking system built in Java. Browse available movies, view seat availability, book seats, and cancel bookings — all from an interactive command-line menu.
+A console-based movie ticket booking system built in Java. Browse available movies, view seat availability, book seats with pricing, cancel bookings, and track booking history — all from an interactive command-line menu.
 
 ## Features
 
@@ -8,7 +8,10 @@ A console-based movie ticket booking system built in Java. Browse available movi
 - **Seat map display** — view all seats in a row-wise grid (`[O]` = available, `[X]` = booked)
 - **Seat booking** with validation (prevents double-booking, handles invalid seat numbers)
 - **Seat cancellation** with validation (prevents cancelling an already-free seat)
-- Two seat types — Regular and Premium
+- **Two seat types** — Regular (₹300) and Premium (₹500) — with automatic price calculation on booking
+- **Customer & booking history tracking** — every successful booking is recorded with customer name, seat, movie, and date
+- **Case-insensitive input** — seat row letters work whether typed in upper or lower case
+- Basic file-based saving of seat status
 - Simple, interactive console menu
 
 ## Tech Stack
@@ -36,12 +39,12 @@ A console-based movie ticket booking system built in Java. Browse available movi
 ## Usage
 
 On launch, you'll see a list of available movies:
-
+```
 Avengers - 10:00
 Intersteller - 14:00
 Conjuring - 20:00
 choose a Movie(1-3)
-
+```
 
 After picking a movie, you'll get the main menu:
 
@@ -50,42 +53,48 @@ After picking a movie, you'll get the main menu:
 | `1` | Show seats |
 | `2` | Book a seat |
 | `3` | Cancel your seat |
-| `4` | Exit |
+| `4` | View booking history |
+| `5` | Exit |
 
-When booking or cancelling, you'll be asked for a **row** (A–E) and a **seat number** (1–10).
+When booking or cancelling, you'll be asked for a **row** (A–E) and a **seat number** (1–10). Booking also asks for your name, which gets recorded in the booking history.
 
 ### Example session
 
-
-choose a Movie(1-3)
-1
+```
 1. Show seats
 2. Book a seat
 3. Cancel your seat
-4. Exit
+4. View Booking History
+5. Exit
 2
-What is the seat row that you would like to book: A
+What is the seat row that you would like to book: b
 what is the seat number that you would like to book: 1
+Enter your name: Shivam
 Thanks for Booking
-Have a nice show, your seat number is A-1
-
+Your seat is booked
+Total amount: ₹300
+Have a nice show, your seat number is B-1
+```
 
 ## Project Structure
 
+```
 src/
 ├── Main.java       # Entry point — movie selection and console menu
-├── Show.java       # Represents a movie show: seat generation, booking, cancellation, seat map display
+├── Show.java       # Represents a movie show: seat generation, booking, cancellation, seat map, booking history, save/load
 ├── Seat.java       # Represents a single seat (row, number, type, booked status)
-└── SeatType.java   # Enum for seat categories (REGULAR, PREMIUM)
+├── SeatType.java   # Enum for seat categories with pricing (REGULAR ₹300, PREMIUM ₹500)
+└── Booking.java    # Represents a single booking record (customer, movie, seat, date)
 ```
+
+## Known Limitations
+
+- **Seat status loading is incomplete** — `loadSeats()` reads the saved file but doesn't yet restore booking status on restart. Bookings persist within a single session but reset when the program is run again.
+- Input validation handles out-of-range/invalid seat numbers gracefully, but malformed input (e.g. entering text where a number is expected) can still throw an exception.
 
 ## Future Improvements
 
-- File persistence — currently all bookings reset when the program restarts
-- Booking history — track which customer booked which seats and when
-- Pricing logic based on seat type
-<<<<<<< HEAD
-- Input validation for malformed input (e.g. text instead of numbers)
-=======
-- Input validation for malformed input (e.g. text instead of numbers)
->>>>>>> 193de314763d09890503449320a8c5b47895ff9f
+- Complete the seat-loading logic so bookings survive a restart
+- Move to a database instead of flat-file storage
+- Add stricter input validation (try-catch around numeric input)
+- Build a web version with Spring Boot + HTML/CSS frontend
